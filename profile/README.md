@@ -6,9 +6,9 @@ High-quality packages?
 - Easy usage instructions included
 - Smallest possible base (preference order: 1) scratch 2) alpine 3) something bigger)
 - Runs as unprivileged user
-- Automatically updated on a schedule
 - Built for multi-arch, if reasonably easy
 - Versioned tags
 - High-quality metadata
-- Vanity URL
-- All builds are tested to a "container starts and stays up" standard, sometimes further
+- (TODO) Automatically updated on a schedule
+- (TODO) All builds are tested to a "container starts and stays up" standard, sometimes further
+- (TODO) Vanity URL (`r.xs.fi/<package name>`)
