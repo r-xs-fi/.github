@@ -3,7 +3,7 @@ High-quality packages?
 
 **All packages** meet the following standards:
 
-- Easy usage instructions included
+- Easy usage instructions included. [Example](https://github.com/r-xs-fi/ltunify)
 - Smallest possible base (preference order: 1) scratch 2) alpine 3) something bigger)
 - Runs as unprivileged user
 - Built for multi-arch, if reasonably easy
