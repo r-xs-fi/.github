@@ -5,7 +5,7 @@ High-quality packages?
 
 - Easy usage instructions included. [Example](https://github.com/r-xs-fi/ltunify)
 - Smallest possible base (preference order: 1) scratch 2) alpine 3) something bigger)
-- Runs as unprivileged user
+- Runs as unprivileged user, exceptions are [clearly documented](https://github.com/r-xs-fi/ltunify/blob/9a658193129fef6db47dc8bbf83164aab91fdcc5/Dockerfile#L11-L12).
 - Built for multi-arch, if reasonably easy
 - Versioned tags
 - High-quality metadata
