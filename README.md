@@ -9,3 +9,16 @@ The end result is the user deriving some benefit from the software - we want the
 However miserable the compilation step is, we hide that behind a container-based build step and a nice standardized package comes out from the end of the pipeline.
 
 The user only has to have Docker installed - that is the least amount of pain we have to settle for.
+
+# Build process
+
+With rate exceptions, most of our build processes look like this:
+
+```mermaid
+flowchart TD
+    Alpine_packages[Alpine packages] -- download --> rxsfi_build
+    GitHub_release[GitHub releases] -- download --> rxsfi_build
+    Other_sources[Other sources] -- download --> rxsfi_build
+    rxsfi_build[r.xs.fi build\nruns in GitHub Actions] -- push --> r_xs_fi_package_registry
+    r_xs_fi_package_registry[r.xs.fi package registry] -- pull --> docker_run[$ docker run ...]
+```
