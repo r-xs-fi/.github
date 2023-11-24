@@ -12,7 +12,7 @@ The user only has to have Docker installed - that is the least amount of pain we
 
 # Build process
 
-With rate exceptions, most of our build processes look like this:
+With rare exceptions, most of our build processes look like this:
 
 ```mermaid
 flowchart TD
