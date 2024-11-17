@@ -22,3 +22,13 @@ flowchart TD
     rxsfi_build[r.xs.fi build\nruns in GitHub Actions] -- push --> r_xs_fi_package_registry
     r_xs_fi_package_registry[r.xs.fi package registry] -- pull --> docker_run[$ docker run ...]
 ```
+
+# Golden samples for packaging
+
+How to package based on different circumstances (ready-made packages, build from source per programming language/etc...):
+
+| Use case                           | Sample package                                                                 |
+|------------------------------------|-------------------------------------------------------------------------------|
+| Just take pre-built from Alpine-based package | [tokei](https://github.com/r-xs-fi/tokei/blob/main/Dockerfile) |
+| Build from Go source               | [torrent](https://github.com/r-xs-fi/torrent/blob/main/Dockerfile)            |
+| Build from Rust source             | [scooter](https://github.com/r-xs-fi/scooter/blob/main/Dockerfile)            |
