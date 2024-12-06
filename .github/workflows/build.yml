@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  # this opts us in to be a reusable workflow.
+  # https://docs.github.com/en/actions/sharing-automations/reusing-workflows#creating-a-reusable-workflow
+  workflow_call:
+
+jobs:
+  build:
+    # we mainly just need to be able to run Docker
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: docker/setup-qemu-action@v2
+      with:
+        platforms: riscv64,arm64,arm
+
+    - uses: docker/setup-buildx-action@v2
+
+    - name: Build
+      run: |
+        set -eu
+        curl --fail --location --no-progress-meter --output bob https://function61.com/go/turbobob-latest-stable-linux-amd64 && chmod +x bob
+        ./bob build in-ci-autodetect-settings
+      env:
+        DOCKER_CREDS: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
