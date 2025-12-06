@@ -21,7 +21,7 @@ jobs:
     - name: Build
       run: |
         set -eu
-        curl --fail --location --no-progress-meter --output bob https://function61.com/go/turbobob-latest-stable-linux-amd64 && chmod +x bob
-        ./bob build in-ci-autodetect-settings
+        docker run --rm -v /usr/local/bin:/host --entrypoint= ghcr.io/function61/turbobob:latest sh -c 'cp $(which bob) /host/'
+        bob build in-ci-autodetect-settings
       env:
         DOCKER_CREDS: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
